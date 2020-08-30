@@ -6,3 +6,4 @@ out/
 
 # file
 *.iml
+.DS_Store

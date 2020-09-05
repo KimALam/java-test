@@ -21,11 +21,16 @@ public class CustomClass implements Serializable {
     private String lastName;
     private int age;
 
-    @Builder
+    public CustomClass() {
+        log.info("default constructor");
+    }
+
     public CustomClass(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+
+        log.info("constructor : firstName={}, lastName={}, age={}", firstName, lastName, age);
     }
 
     // customizing serialized data

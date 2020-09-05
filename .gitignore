@@ -3,6 +3,7 @@
 build/
 out/
 .gradle/
+target/
 
 # file
 *.iml

@@ -16,6 +16,9 @@ public class Employee implements Externalizable {
     private int age;
     private static String department;
 
+    // Externalizable의 deserialize 순서
+    // 1. Call public default constructor -> 없으면 InvalidClassException
+    // 2. Call readExternal()
     public Employee() {
         log.info("default constructor");
     }

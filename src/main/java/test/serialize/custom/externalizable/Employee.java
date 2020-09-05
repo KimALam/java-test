@@ -29,6 +29,7 @@ public class Employee implements Externalizable {
         log.info("constructor : firstName={}, lastName={}, age={}, department={}", firstName, lastName, age, department);
     }
 
+    // writeExternal / readExternal이 있으면 default serializable 메카니즘은 무시 된다.
     @Override
     public void writeExternal(ObjectOutput out) throws IOException {
         log.info("@@@ writeExternal()");

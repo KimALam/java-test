@@ -1,4 +1,4 @@
-package test.serialize.custom;
+package test.serialize.custom.serializable;
 
 import lombok.Builder;
 import lombok.Getter;

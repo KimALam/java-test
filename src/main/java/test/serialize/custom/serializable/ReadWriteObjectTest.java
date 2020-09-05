@@ -1,4 +1,4 @@
-package test.serialize.custom;
+package test.serialize.custom.serializable;
 
 import lombok.extern.slf4j.Slf4j;
 

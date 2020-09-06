@@ -1,4 +1,4 @@
-package pattern;
+package pattern.bridge;
 
 public class BridgeSample {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package sample.annotation.custom;
+package test.annotation.custom;
 
 @JsonSerializable
 public class Person {

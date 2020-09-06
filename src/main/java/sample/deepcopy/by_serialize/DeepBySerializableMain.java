@@ -15,7 +15,7 @@ import java.util.Objects;
  */
 @Slf4j
 /** 3번 serializable을 이용한 deep clone */
-public class DeepBySerializableMain {
+class DeepBySerializableMain {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         Employee emp = new Employee("chulsu kim", LocalDate.now(), Arrays.asList("Java", "Kotlin", "Spring"));
         log.info("Employee : {}", emp);

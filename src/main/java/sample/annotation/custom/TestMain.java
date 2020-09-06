@@ -1,4 +1,4 @@
-package sample.custom_annotation;
+package sample.annotation.custom;
 
 public class TestMain {
     public static void main(String[] args) {

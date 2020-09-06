@@ -1,4 +1,4 @@
-package sample.lazy_evaluation;
+package sample.stream;
 
 import java.util.Arrays;
 import java.util.List;

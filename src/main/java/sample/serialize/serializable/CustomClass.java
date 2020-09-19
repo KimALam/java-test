@@ -1,6 +1,5 @@
-package test.serialize.custom.serializable;
+package sample.serialize.serializable;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;

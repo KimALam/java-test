@@ -1,4 +1,4 @@
-package sample.custom_annotation;
+package test.annotation.custom;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

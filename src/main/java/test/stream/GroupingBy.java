@@ -1,4 +1,4 @@
-package sample.collectors_groupingby;
+package test.stream;
 
 import java.util.Arrays;
 import java.util.List;

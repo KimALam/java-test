@@ -1,4 +1,4 @@
-package sample.custom_annotation;
+package test.annotation.custom;
 
 public class JsonSerializationException extends RuntimeException {
     public JsonSerializationException() {

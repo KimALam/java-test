@@ -1,25 +1,26 @@
-package test.serialize.custom.serializable;
+package sample.serialize.externalizable;
 
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
 
 @Slf4j
-public class ReadWriteObjectTest {
+public class ExternalizableTest {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        CustomClass cc = new CustomClass("kim", "alam", 21);
-        log.info("original : {}", cc);
+        Employee ee = new Employee("kim", "alam", 24, "Admin");
 
-        // serialize
+        log.info("origin : {}", ee);
+
         try (FileOutputStream fos = new FileOutputStream("data.obj");
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
-            oos.writeObject(cc);
+            oos.writeObject(ee);
         }
 
         try (FileInputStream fis = new FileInputStream("data.obj");
              ObjectInputStream ois = new ObjectInputStream(fis)) {
-            CustomClass d_cc = (CustomClass) ois.readObject();
-            log.info("deserialized : {}", d_cc);
+            Employee d_ee = (Employee) ois.readObject();
+
+            log.info("deserialized : {}", d_ee);
         }
     }
 }

@@ -2,7 +2,7 @@ package test.serialize.basic;
 
 import java.io.Serializable;
 
-public class SerialTestClassCCC implements Serializable {
+class SerialTestClassCCC implements Serializable {
     int field1;
     SerialTestClassBBB field2;
     static int field3;

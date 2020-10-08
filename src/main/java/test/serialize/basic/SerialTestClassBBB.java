@@ -2,7 +2,7 @@ package test.serialize.basic;
 
 import java.io.Serializable;
 
-public class SerialTestClassBBB implements Serializable {
+class SerialTestClassBBB implements Serializable {
     private static final long serialVersionUID = 1L;
 //    int error = 111; //
     int field1;

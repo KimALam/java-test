@@ -6,8 +6,15 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
- * 부모에 serializable 빠져 있으면 부모 제외된다.
- * 그러나, 부모가 serializable 이면 자식은 serializable 없어도 자동으로 serializable 이다.
+ * case 1) parent - serializable / child - no serializable
+ *         child는 부모 따라서 serialize 가능 하다.
+ * case 2) parent - no serializable / child - serializable
+ *        child를 serialize 시에 부모의 필드는 제외 된다.
+ *        또한 부모는 반드시 default(no-arg) constructor를 가져야 한다.
+ *
+ *  결론: 상속 관계에 있을 때 implements serializable 가 명시된 클래스와 그 subclass 들만 serialize 된다. 부모는 안됨.
+ *
+ *  ref: https://www.geeksforgeeks.org/object-serialization-inheritance-java/
  */
 class Child extends Parent implements Serializable {
     String field2;

@@ -3,6 +3,7 @@ package rxjava.test.benchmark;
 import io.reactivex.Single;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
+import org.openjdk.jmh.runner.RunnerException;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -53,7 +54,7 @@ public class MapBenchmark {
                 .blockingGet();
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, RunnerException {
         org.openjdk.jmh.Main.main(args);
     }
 }

@@ -6,8 +6,12 @@ import java.security.KeyStore;
 import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 
+// .keystore 파일 생성
+// $> keytool -genkey -alias sdo -keyalg RSA -keystore ./.keystore
+
 @Slf4j
 class KeyStoreHandlerTest {
+
     public static void main(String[] args) {
         try {
             final String alias = "sdo";//args[0];

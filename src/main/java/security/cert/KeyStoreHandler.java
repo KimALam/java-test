@@ -18,10 +18,7 @@ public class KeyStoreHandler {
     private static final String KEY_STORE_DEFAULT_PATH;
     static {
 //        KEY_STORE_DEFAULT_PATH = System.getProperty("user.home") + File.separator + ".keystore";
-        KEY_STORE_DEFAULT_PATH = //System.getProperty("user.home") +
-                "security" +
-                File.separator +
-                ".keystore";
+        KEY_STORE_DEFAULT_PATH = "src/main/resources/security/.keystore";
         log.info("key store path : " + KEY_STORE_DEFAULT_PATH);
     }
 

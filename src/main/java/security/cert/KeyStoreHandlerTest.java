@@ -6,8 +6,8 @@ import java.security.KeyStore;
 import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 
-// .keystore 파일 생성
-// $> keytool -genkey -alias sdo -keyalg RSA -keystore ./.keystore
+// 1. key entry 생성(파일명: ssc.jks) : private key + self-signed certificate
+//   $> keytool -genkey -alias sdo -keyalg RSA -keystore ./ssc.jks
 
 @Slf4j
 class KeyStoreHandlerTest {

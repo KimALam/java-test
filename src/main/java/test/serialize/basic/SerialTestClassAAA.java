@@ -2,7 +2,7 @@ package test.serialize.basic;
 
 import java.io.Serializable;
 
-public class SerialTestClassAAA implements Serializable {
+class SerialTestClassAAA implements Serializable {
     public int field1;
     protected int field2;
     int field3;

@@ -47,6 +47,26 @@ class Employee implements Serializable {
         ByteArrayInputStream bis = new ByteArrayInputStream(bos.toByteArray());
         ObjectInputStream in = new ObjectInputStream(bis);
         return (Employee) in.readObject();
+
+
+/* Reference to Java.security.SignedObject constructor
+
+public SignedObject(Serializable object, PrivateKey signingKey, Signature signingEngine) throws IOException, InvalidKeyException, SignatureException {
+    // creating a stream pipe-line, from a to b
+    ByteArrayOutputStream b = new ByteArrayOutputStream();
+    ObjectOutput a = new ObjectOutputStream(b);
+
+    // write and flush the object content to byte array
+    a.writeObject(object);
+    a.flush();
+    a.close();
+    this.content = b.toByteArray();
+    b.close();
+
+    // now sign the encapsulated object
+    this.sign(signingKey, signingEngine);
+}
+*/
     }
 
     @Override

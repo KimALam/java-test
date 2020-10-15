@@ -1,4 +1,4 @@
-package security.signature;
+package security.signature.basic;
 
 import security.keystore.KeyStoreHandler;
 

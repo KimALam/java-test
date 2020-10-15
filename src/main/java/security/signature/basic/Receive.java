@@ -1,6 +1,5 @@
 package security.signature.basic;
 
-import lombok.extern.slf4j.Slf4j;
 import security.keystore.KeyStoreHandler;
 
 import java.io.FileInputStream;
@@ -10,12 +9,11 @@ import java.security.PublicKey;
 import java.security.Signature;
 import java.security.cert.Certificate;
 
-@Slf4j
-class Receive {
-    private static final String ALIAS = "sdo";
-    private static final String PW = "1234qwer";
-    private static final String FILE_NAME = "sig_test";
+import static security.signature.basic.Send.ALIAS;
+import static security.signature.basic.Send.FILE_NAME;
+import static security.signature.basic.Send.PW;
 
+class Receive {
     public static void main(String[] args) {
         try {
             String data = null;
@@ -29,7 +27,7 @@ class Receive {
             try {
                 data = (String) o;
             } catch (ClassCastException cce) {
-                log.error("Unexpected data in file");
+                System.out.println("Unexpected data in file");
                 System.exit(-1);
             }
 
@@ -38,11 +36,11 @@ class Receive {
             try {
                 signature = (byte[]) o;
             } catch (ClassCastException cce) {
-                log.error("Unexpected data in file");
+                System.out.println("Unexpected data in file");
                 System.exit(-1);
             }
 
-            log.info("Received message :{}", data);
+            System.out.println("Received message : " + data);
 
             KeyStoreHandler ksh = new KeyStoreHandler(PW.toCharArray());
             KeyStore ks = ksh.getKeyStore();
@@ -54,9 +52,9 @@ class Receive {
             s.initVerify(pk);
             s.update(data.getBytes());
             if (s.verify(signature)) {
-                log.info("Message is valid");
+                System.out.println("Message is valid");
             } else {
-                log.info("Message was corrupted");
+                System.out.println("Message was corrupted");
             }
         } catch (Exception e) {
             e.printStackTrace();

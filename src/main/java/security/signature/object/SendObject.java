@@ -1,4 +1,4 @@
-package security.signature.basic;
+package security.signature.object;
 
 import security.keystore.KeyStoreHandler;
 
@@ -7,11 +7,13 @@ import java.io.ObjectOutputStream;
 import java.security.KeyStore;
 import java.security.PrivateKey;
 import java.security.Signature;
+import java.security.SignedObject;
+import java.security.cert.Certificate;
 
-class Send {
+class SendObject {
     static final String ALIAS = "sdo";
     static final String PW = "1234qwer";
-    static final String FILE_NAME = "sig_test";
+    static final String FILE_NAME = "test.obj";
     static final String data = "This have I thought good to deliver thee, " +
             "that thou mightst not lose the dues of rejoicing " +
             "by being ignorant of what greatness is promised thee.";
@@ -23,16 +25,15 @@ class Send {
 
             KeyStoreHandler ksh = new KeyStoreHandler(null);
             KeyStore ks = ksh.getKeyStore();
+
+            Certificate[] certs = ks.getCertificateChain(ALIAS);
             PrivateKey pk = (PrivateKey) ks.getKey(ALIAS, PW.toCharArray());
 
-            Signature s = Signature.getInstance("MD5withRSA");
-            s.initSign(pk);
+            Message m = new Message();
+            m.object = new SignedObject(data, pk, Signature.getInstance("MD5withRSA"));
+            m.certificate = certs[0];
 
-            byte[] buf = data.getBytes();
-            s.update(buf);
-
-            oos.writeObject(data);
-            oos.writeObject(s.sign());
+            oos.writeObject(m);
         } catch (Exception e) {
             e.printStackTrace();
         }

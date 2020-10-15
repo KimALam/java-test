@@ -1,6 +1,6 @@
 package security.signature;
 
-import security.cert.KeyStoreHandler;
+import security.keystore.KeyStoreHandler;
 
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;

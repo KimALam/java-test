@@ -1,7 +1,7 @@
 package security.signature;
 
 import lombok.extern.slf4j.Slf4j;
-import security.cert.KeyStoreHandler;
+import security.keystore.KeyStoreHandler;
 
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;

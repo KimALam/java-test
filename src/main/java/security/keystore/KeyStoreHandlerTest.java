@@ -1,4 +1,4 @@
-package security.cert;
+package security.keystore;
 
 import lombok.extern.slf4j.Slf4j;
 

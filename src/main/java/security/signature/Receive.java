@@ -44,7 +44,7 @@ class Receive {
 
             log.info("Received message :{}", data);
 
-            KeyStoreHandler ksh = new KeyStoreHandler(null);
+            KeyStoreHandler ksh = new KeyStoreHandler(PW.toCharArray());
             KeyStore ks = ksh.getKeyStore();
 
             // certificate has public key + signature + info(ex. DN)

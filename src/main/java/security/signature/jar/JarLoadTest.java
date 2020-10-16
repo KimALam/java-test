@@ -18,8 +18,11 @@ class JarLoadTest {
             Class cls = jl.loadClass("security.signature.jar.TestAAA");
             System.out.println("[JarLoadTest] cl : " + getClass().getClassLoader());
             System.out.println("cls : " + cls.getName());
-            TestAAA aaa = (TestAAA) cls.newInstance();
-            aaa.printClassLoader();
+            Object aaa = cls.newInstance();
+            System.out.println(aaa.getClass().getClassLoader());
+
+            // 주의) 캐스팅 안됨: ta의 class loader와 aaa의 class loader가 다르기 때문인가?
+//            TestAAA ta = (TestAAA) aaa;
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }

@@ -61,13 +61,13 @@ public class JarLoader extends SecureClassLoader {
         return baos.toByteArray();
     }
 
-    @Override
-    public Class<?> loadClass(String name) throws ClassNotFoundException {
-        if (name.startsWith("security.")) {
-            return findClass(name);
-        }
-        return super.loadClass(name);
-    }
+//    @Override
+//    public Class<?> loadClass(String name) throws ClassNotFoundException {
+//        if (name.startsWith("security.")) {
+//            return findClass(name);
+//        }
+//        return super.loadClass(name);
+//    }
 
     // Find the class. This is based on the steps of out previous example in Chapter 6.
     @Override

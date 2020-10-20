@@ -13,7 +13,7 @@ import java.net.Socket;
 //  $> cd src/main/resources/keystore
 //  $> keytool -genkey -keystore server.jks -keyalg RSA
 //  $> keytool -export -keystore server.jks -file server.cer
-//  $> keytool -import -keystore ./truststore -file server.cer
+//  $> keytool -import -keystore ./truststore.jks -file server.cer
 
 // Server start:
 // java -Djavax.net.ssl.keyStore=./keystore/server.jks -Djavax.net.ssl.keyStorePassword=1234qwer security.ssl.SSLSimpleServer

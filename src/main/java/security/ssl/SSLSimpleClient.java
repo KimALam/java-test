@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 // Client start
-// java -Djavax.net.ssl.trustStore=./keystore/truststore -Djavax.net.ssl.trustStorePassword=1234qwer security.ssl.SSLSimpleClient localhost 9096
+// java -Djavax.net.ssl.trustStore=./keystore/truststore.jks -Djavax.net.ssl.trustStorePassword=1234qwer security.ssl.SSLSimpleClient localhost 9096
 class SSLSimpleClient {
     public static void main(String[] args) throws IOException {
         SocketFactory sf = SSLSocketFactory.getDefault();

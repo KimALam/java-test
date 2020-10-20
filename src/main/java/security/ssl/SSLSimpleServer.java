@@ -9,6 +9,14 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+// Create keystore
+//  $> cd src/main/resources/keystore
+//  $> keytool -genkey -keystore server.jks -keyalg RSA
+//  $> keytool -export -keystore server.jks -file server.cer
+//  $> keytool -import -keystore ./truststore -file server.cer
+
+// Server start:
+// java -Djavax.net.ssl.keyStore=./keystore/server.jks -Djavax.net.ssl.keyStorePassword=1234qwer security.ssl.SSLSimpleServer
 class SSLSimpleServer extends Thread {
     public static void main(String[] args) throws IOException {
         ServerSocketFactory ssf = SSLServerSocketFactory.getDefault();

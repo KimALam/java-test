@@ -14,6 +14,6 @@ public class CreateTest {
             emitter.onComplete();
         });
 
-//        source.subscribe(next -> log.info("onNext: {}", next));
+        source.subscribe(next -> log.info("onNext: {}", next));
     }
 }

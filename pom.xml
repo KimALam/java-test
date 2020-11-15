@@ -28,6 +28,7 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- RxJava -->
         <dependency>
             <groupId>io.reactivex.rxjava2</groupId>
             <artifactId>rxjava</artifactId>
@@ -39,10 +40,17 @@
             <version>3.0.1</version>
         </dependency>
 
+        <!-- spring -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>2.5.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.3.0</version>
         </dependency>
 
         <dependency>
@@ -57,6 +65,7 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- json -->
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
@@ -86,6 +95,7 @@
             <version>4.9.0</version>
         </dependency>
 
+        <!-- log -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>

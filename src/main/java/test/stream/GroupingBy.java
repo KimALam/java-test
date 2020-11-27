@@ -7,7 +7,12 @@ import java.util.Objects;
 import java.util.Set;
 
 import static java.util.stream.Collectors.averagingInt;
+import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.mapping;
+import static java.util.stream.Collectors.reducing;
+import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
 
 public class GroupingBy {
@@ -34,6 +39,22 @@ public class GroupingBy {
         // 4. average like
         Map<BlogPostType, Double> averageLikesPerType = postList.stream().collect(groupingBy(BlogPost::getType, averagingInt(BlogPost::getLikes)));
         System.out.println(averageLikesPerType);
+
+        // 5. mapping
+        Map<BlogPostType, String> concatType = postList.stream()
+                .collect(groupingBy(BlogPost::getType, mapping(BlogPost::getTitle, joining(", "))));
+        System.out.println(concatType);
+
+        // 6. collectingAndThen
+        String then = postList.stream()
+                .collect(collectingAndThen(
+                        toList(),
+                        list -> {
+                            String str = list.stream().collect(mapping(BlogPost::getAuthor, joining(", ")));
+                            return str;
+                        }
+                ));
+        System.out.println("then : " + then);
     }
 
     private static class BlogPost {

@@ -7,18 +7,20 @@ public class EnumTestMain {
             System.out.println("name(): " + e.name());
             System.out.println("toString(): " + e.toString());
         }
-        System.out.println(TestEnum.valueOf("FIRST"));
+        System.out.println("valueOf : " + TestEnum.valueOf("FIRST"));
     }
 
     public enum TestEnum {
-        FIRST("first"),
-        SECOND("second"),
-        THIRD("third");
+        FIRST("1111", "1010"),
+        SECOND("2222", "2020"),
+        THIRD("3333", "3030");
 
         private final String label;
+        private final String label2;
 
-        TestEnum(String label) {
+        TestEnum(String label, String label2) {
             this.label = label;
+            this.label2 = label2;
         }
 
         @Override

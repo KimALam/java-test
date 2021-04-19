@@ -95,6 +95,13 @@
             <version>4.9.0</version>
         </dependency>
 
+        <!-- JOL (Java Object Layout) -->
+        <dependency>
+            <groupId>org.openjdk.jol</groupId>
+            <artifactId>jol-core</artifactId>
+            <version>0.10</version>
+        </dependency>
+
         <!-- log -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
